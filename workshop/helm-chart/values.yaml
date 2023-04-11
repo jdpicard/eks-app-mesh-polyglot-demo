@@ -17,7 +17,7 @@ detail:
 
   service:
     type: ClusterIP
-    targetPort: 2000
+    targetPort: 3000
 
   ingress:
     enabled: false
@@ -36,7 +36,7 @@ detail:
   livenessProbe:
     enabled: true
     path: /ping
-    port: 2000
+    port: 3000
     initialDelaySeconds: 5
     periodSeconds: 5
     timeoutSeconds: 1
@@ -51,7 +51,7 @@ detail:
     successThreshold: 1
   startupProbe:
     enabled: false
-  #   port: 2000
+  #   port: 3000
   #   path: /ping
   #   initialDelaySeconds: 10
   #   periodSeconds: 10
@@ -152,7 +152,7 @@ catalog:
     
   env:
     - name: AGG_APP_URL
-      value: "http://proddetail.workshop:2000/catalogDetail"
+      value: "http://proddetail.workshop:3000/catalogDetail"
     - name: AWS_XRAY_DAEMON_ADDRESS
       value: xray-service.default:2000
     - name: DATABASE_SERVICE_URL
